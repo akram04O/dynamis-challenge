@@ -1,0 +1,115 @@
+:root{
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --primary-color: #800bd9;
+    --secondary-color: #2ecc71;
+    --hover-color: #27ae60;
+    --container-color: #1a1a1a;
+    --shadow-color: rgba(155, 89, 182, 0.4);
+}
+
+body {
+    font-family: monospace;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 300px;
+    text-align: center;
+    background-color: var(--container-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+h1 {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2s steps(20) alternate infinite;
+    animation-delay: 0.5s;
+}
+
+.name {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-family: monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--primary-color);
+    width: 0;
+    
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 20ch }
+}
+
+p{
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.grade,.role{
+    font-size: 1.4em;
+    color: var(--primary-color);
+}
+
+.quote{
+    font-size: 1.2em;
+    font-style: italic;
+    color: var(--text-color);
+    margin: 20px;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.github, .facebook, .linkedin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.github .facebook .linkedin,  a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.5em;
+}
+.github, .facebook, .linkedin, a:hover{
+    color: var(--hover-color);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+.fb, .git, .in{
+    color: var(--text-color);
+    margin: 20px;
+    transition: color 0.3s ease;
+}
+.fb:hover, .git:hover, .in:hover{
+    color: var(--hover-color);
+    transition: color 0.3s ease;
+}
+
