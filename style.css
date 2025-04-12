@@ -23,25 +23,25 @@ body {
 .container {
     padding: 20px;
     border-radius: 8px;
-    width: 800px;
-    max-width: 90%;
+    width: min(800px, 90%);
     text-align: center;
     background-color: var(--container-color);
     box-shadow: 0 4px 8px var(--shadow-color);
+    margin: 2rem;
 }
 
 h1 {
     display: inline-block;
     margin: 0 auto;
     text-align: center;
-    font-size: 2.2em;
-    margin-bottom: 20px;
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    margin-bottom: 1.5rem;
     color: var(--text-color);
     text-transform: uppercase;
     overflow: hidden;
     white-space: nowrap;
     width: 0;
-    animation: typing 2s steps(20) alternate infinite;
+    animation: typing 2s steps(20)  infinite alternate;
     animation-delay: 0.5s;
 }
 
@@ -62,20 +62,21 @@ h1 {
 }
 p{
     margin-bottom: 20px;
-    font-size: 1.3em;
+    font-size: clamp(1rem, 3vw, 1.3rem);
     font-weight: bold;
+    line-height: 1.6;
 }
 
 .grade,.role{
-    font-size: 1.4em;
+    font-size: inherit;
     color: var(--primary-color);
 }
 
 .quote{
-    font-size: 1.2em;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    margin: 1.5rem 0;
     font-style: italic;
     color: var(--text-color);
-    margin: 20px;
 }
 
 .social-media{
@@ -83,7 +84,8 @@ p{
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    gap: 20px;
+    gap: clamp(1rem, 3vw, 2rem);
+    flex-wrap: wrap;
 }
 
 .github, .facebook, .linkedin{
@@ -91,18 +93,20 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 0.5rem;
+    padding: 0.5rem;
 }
 
 .github a, .facebook a, .linkedin a{
     text-decoration: none;
     color: var(--text-color);
-    font-size: 1.5em;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    transition: all 0.3s ease;
 }
-.github, .facebook, .linkedin, a:hover{
+.github:hover a, .facebook:hover a, .linkedin:hover a,
+.github:hover .fa-brands, .facebook:hover .fa-brands, .linkedin:hover .fa-brands {
     color: var(--hover-color);
     transform: scale(1.1);
-    transition: transform 0.3s ease;
 }
 .fb, .git, .in{
     color: var(--text-color);
@@ -113,80 +117,26 @@ p{
     color: var(--hover-color);
     transition: color 0.3s ease;
 }
-
-@media (max-width: 400px) {
-    .container {
-        width: 90%;
-        padding: 10px;
-        margin: 20px;
-    }
-    h1 {
-        font-size: 1em;
-    }
-    p {
-        font-size: 1em;
-    }
-    .grade, .role {
-        font-size: 1.2em;
-    }
-    .quote {
-        font-size: 1em;
-    }
-}
 @media (max-width: 600px) {
     .container {
-        width: 90%;
-        padding: 10px;
-        margin: 20px;
+        padding: 1rem;
+        margin: 1rem;
     }
+    
     h1 {
-        font-size: 1.8em;
-    }
-    p {
-        font-size: 1.2em;
-    }
-    .grade, .role {
-        font-size: 1.3em;
-    }
-    .quote {
-        font-size: 1.1em;
+        white-space: normal;
+        animation: none; 
+        border-right: none;
     }
 }
-@media (max-width: 800px) {
+@media (max-width: 400px) {
     .container {
-        width: 90%;
-        padding: 10px;
-        margin: 20px;
+        padding: 0.5rem;
+        margin: 0.5rem;
     }
     h1 {
-        font-size: 2em;
-    }
-    p {
-        font-size: 1.3em;
-    }
-    .grade, .role {
-        font-size: 1.4em;
-    }
-    .quote {
-        font-size: 1.2em;
-    }
-}
-@media (max-width: 1000px) {
-    .container {
-        width: 90%;
-        padding: 10px;
-        margin: 20px;
-    }
-    h1 {
-        font-size: 2.2em;
-    }
-    p {
-        font-size: 1.4em;
-    }
-    .grade, .role {
-        font-size: 1.5em;
-    }
-    .quote {
-        font-size: 1.3em;
+        white-space: normal;
+        animation: none; 
+        border-right: none;
     }
 }
